@@ -111,9 +111,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-echo 
 
 # Custom Additions
 export HISTSIZE=10000
 export HISTFILESIZE=10000
-export PS1="\a\][\t] \u@\h : \W$"
+export PS1="\a\][\t] \u@\h : \W$ "
