@@ -1,3 +1,4 @@
+" ---------- PLUGINS ----------
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -45,10 +46,10 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" Basics
+" ---------- BASICS ----------
 set nowrap
 set nu
 set tabstop=4
 set shiftwidth=4
 syntax on
-
+colorscheme industry
