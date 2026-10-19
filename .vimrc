@@ -42,7 +42,18 @@ filetype plugin indent on    " required
 " ---------- BASICS ----------
 set nowrap
 set nu
+" Tabs: 4 columns, insert spaces (same as nvim/lua/options.lua)
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
+set expandtab
+
+" Go requires real tabs (gofmt). Neovim's Go filetype plugin already does this,
+" Vim 8.2's doesn't; Makefiles are handled by Vim's own filetype plugin.
+augroup go_tabs
+    autocmd!
+    autocmd FileType go setlocal noexpandtab softtabstop=0 shiftwidth=0
+augroup END
+
 syntax on
 colorscheme industry
