@@ -5,10 +5,6 @@
       "src": "https://github.com/saghen/blink.cmp",
       "version": "'v1'"
     },
-    "monokai": {
-      "rev": "759be78d722e306e4a3aac9cc0738f1be86a1ab8",
-      "src": "https://github.com/tanvirtin/monokai.nvim"
-    },
     "nvim-lspconfig": {
       "rev": "45a3a444b710511c39abca3b60bb6e23a21e3de5",
       "src": "https://github.com/neovim/nvim-lspconfig"
