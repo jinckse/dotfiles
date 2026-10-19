@@ -47,7 +47,7 @@ require("blink.cmp").setup({
 	-- See the fuzzy documentation for more information
 	fuzzy = { implementation = "prefer_rust_with_warning" },
 	completion = {
-		-- The keyword should only matchh against the text before
+		-- The keyword should only match against the text before the cursor
 		keyword = { range = "prefix" },
 		menu = {
 			-- Use treesitter to highlight the label text for the given list of sources
@@ -55,7 +55,7 @@ require("blink.cmp").setup({
 				treesitter = { "lsp" },
 			},
 		},
-		-- Show completions after tying a trigger character, defined by the source
+		-- Show completions after typing a trigger character, defined by the source
 		trigger = { show_on_trigger_character = true },
 		documentation = {
 			-- Show documentation automatically
@@ -63,6 +63,6 @@ require("blink.cmp").setup({
 		},
 	},
 
-	-- Signature help when tying
+	-- Signature help when typing
 	signature = { enabled = true },
 })
