@@ -115,4 +115,16 @@ fi
 # Custom Additions
 export HISTSIZE=10000
 export HISTFILESIZE=10000
-export PS1="\a\][\t] \u@\h : \W$ "
+
+# prompt: [time] user@host : current-dir$ (\$ shows # when root)
+# not exported, since PS1 escapes are bash-specific and child shells set their own
+PS1='[\t] \u@\h : \W\$ '
+
+# on terminals that support it, also set the window title to user@host: full-path.
+# \e]0;...\a is the title escape sequence; \[ \] mark it as non-printing so bash
+# doesn't count it toward the prompt width (which breaks line wrapping)
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;\u@\h: \w\a\]$PS1"
+    ;;
+esac
