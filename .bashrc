@@ -116,6 +116,15 @@ fi
 export HISTSIZE=10000
 export HISTFILESIZE=10000
 
+# Go: programs from "go install" (e.g. gopls) go to $GOPATH/bin, ~/go/bin by default.
+# The case check skips adding it again when re-sourcing this file.
+GOBIN_DIR="${GOPATH:-$HOME/go}/bin"
+case ":$PATH:" in
+*":$GOBIN_DIR:"*) ;;
+*) export PATH="$GOBIN_DIR:$PATH" ;;
+esac
+unset GOBIN_DIR
+
 # prompt: [time] user@host : current-dir$ (\$ shows # when root)
 # not exported, since PS1 escapes are bash-specific and child shells set their own
 PS1='[\t] \u@\h : \W\$ '
