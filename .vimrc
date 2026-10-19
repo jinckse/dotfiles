@@ -2,26 +2,30 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Only load plugins if Vundle is installed (install.sh clones it), so Vim
+" still starts without errors on a machine where it isn't.
+if isdirectory(expand('~/.vim/bundle/Vundle.vim'))
+    " set the runtime path to include Vundle and initialize
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+    " let Vundle manage Vundle, required
+    Plugin 'VundleVim/Vundle.vim'
 
-" Keep Plugin commands between vundle#begin/end.
-" Git commands (:Git, :Gdiffsplit, :Git blame)
-Plugin 'tpope/vim-fugitive'
-" HTML shorthand expansion; the vim script lives in the repo's vim/ subdirectory
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" File templates for new files
-Plugin 'tibabit/vim-templates'
+    " Keep Plugin commands between vundle#begin/end.
+    " Git commands (:Git, :Gdiffsplit, :Git blame)
+    Plugin 'tpope/vim-fugitive'
+    " HTML shorthand expansion; the vim script lives in the repo's vim/ subdirectory
+    Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+    " File templates for new files
+    Plugin 'tibabit/vim-templates'
 
-" Autoformatting
-Plugin 'Chiel92/vim-autoformat'
+    " Autoformatting
+    Plugin 'Chiel92/vim-autoformat'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+    " All of your Plugins must be added before the following line
+    call vundle#end()            " required
+endif
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on

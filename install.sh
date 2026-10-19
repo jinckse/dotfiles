@@ -32,6 +32,15 @@ link() {
 # vim
 link .vimrc ~/.vimrc
 
+# Vundle plugin manager; run :PluginInstall in Vim afterwards to fetch plugins
+VUNDLE_DIR=~/.vim/bundle/Vundle.vim
+if [ -d "$VUNDLE_DIR" ]; then
+    echo "ok      $VUNDLE_DIR"
+else
+    git clone --quiet https://github.com/VundleVim/Vundle.vim.git "$VUNDLE_DIR"
+    echo "cloned  $VUNDLE_DIR"
+fi
+
 # neovim
 link nvim ~/.config/nvim
 
