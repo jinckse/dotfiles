@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=10000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -75,7 +75,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    # the ls alias itself is in ~/.bash_aliases
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -113,9 +113,6 @@ if ! shopt -oq posix; then
 fi
 
 # Custom Additions
-export HISTSIZE=10000
-export HISTFILESIZE=10000
-
 # Go: programs from "go install" (e.g. gopls) go to $GOPATH/bin, ~/go/bin by default.
 # The case check skips adding it again when re-sourcing this file.
 GOBIN_DIR="${GOPATH:-$HOME/go}/bin"
