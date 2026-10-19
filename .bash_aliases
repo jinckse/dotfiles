@@ -4,8 +4,8 @@ alias dm="sudo dmesg -w"
 # Start kernel log following
 alias klog="sudo tail -f /var/log/kern.log"
 
-# List all with paging, dotfiles, long-form, sorted by modification, and with human-readable sizees
-alias ll="ls -lta | less"
+# List all with dotfiles, long-form, sorted by modification, and with human-readable sizes
+alias ll="ls -lta"
 
 # List hidden files
 alias l.="ls -d .* --color=auto"
