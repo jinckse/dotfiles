@@ -1,6 +1,6 @@
 -- define common options
+-- (vim.keymap.set is non-recursive by default, so noremap isn't needed)
 local opts = {
-    noremap = true,      -- non-recursive
     silent = true,       -- do not show message
 }
 
@@ -17,10 +17,11 @@ vim.keymap.set('n', '<C-l>', '<C-w>l', opts)
 
 -- Resize with arrows
 -- delta: 2 lines
-vim.keymap.set('n', '<C-Up>', ':resize -2<CR>', opts)
-vim.keymap.set('n', '<C-Down>', ':resize +2<CR>', opts)
-vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>', opts)
-vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>', opts)
+-- <cmd> runs the command directly, without entering command-line mode
+vim.keymap.set('n', '<C-Up>', '<cmd>resize -2<CR>', opts)
+vim.keymap.set('n', '<C-Down>', '<cmd>resize +2<CR>', opts)
+vim.keymap.set('n', '<C-Left>', '<cmd>vertical resize -2<CR>', opts)
+vim.keymap.set('n', '<C-Right>', '<cmd>vertical resize +2<CR>', opts)
 
 -----------------
 -- Visual mode --
